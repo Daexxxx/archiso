@@ -30,6 +30,6 @@ install-doc:
 	install -vDm 644 $(DOC_FILES) -t $(DOC_DIR)
 
 iso:
-    cd iso && make
+    cd iso && make target: \tcmd
 
 .PHONY: check install install-doc install-profiles install-scripts shellcheck
