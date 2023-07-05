@@ -9,7 +9,10 @@ DOC_FILES=$(wildcard docs/*) $(wildcard *.rst)
 SCRIPT_FILES=$(wildcard archiso/*) $(wildcard scripts/*.sh) $(wildcard .gitlab/ci/*.sh) \
              $(wildcard configs/*/profiledef.sh) $(wildcard configs/*/airootfs/usr/local/bin/*)
 
-all:
+all: iso
+
+iso:
+    cd iso && make target: \tcmd
 
 check: shellcheck
 
@@ -28,8 +31,3 @@ install-profiles:
 
 install-doc:
 	install -vDm 644 $(DOC_FILES) -t $(DOC_DIR)
-
-iso:
-    cd iso && make target: \tcmd
-
-.PHONY: check install install-doc install-profiles install-scripts shellcheck
