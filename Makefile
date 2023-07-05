@@ -12,7 +12,7 @@ SCRIPT_FILES=$(wildcard archiso/*) $(wildcard scripts/*.sh) $(wildcard .gitlab/c
 all: iso
 
 iso:
-    cd iso && make target: \tcmd
+    cd iso && make target: \archiso\iso
 
 check: shellcheck
 
