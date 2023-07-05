@@ -30,4 +30,7 @@ install-profiles:
 install-doc:
 	install -vDm 644 $(DOC_FILES) -t $(DOC_DIR)
 
+iso:
+    make -C iso
+
 .PHONY: check install install-doc install-profiles install-scripts shellcheck
