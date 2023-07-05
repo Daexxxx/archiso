@@ -1,4 +1,3 @@
-#
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 PREFIX ?= /usr/local
@@ -31,6 +30,6 @@ install-doc:
 	install -vDm 644 $(DOC_FILES) -t $(DOC_DIR)
 
 iso:
-    :
+    cd iso && make
 
 .PHONY: check install install-doc install-profiles install-scripts shellcheck
