@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - main
+      - v1.0.0
+  pull_request:
+    branches:
+      - v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build ISO file
+        run: make iso
+      - name: Upload ISO file to Actions tab
+        uses: actions/upload-artifact@v3
+        with:
+          name: archlinux-iso
+          path: ./iso/archlinux-*.iso
